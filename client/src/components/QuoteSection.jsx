@@ -3,7 +3,7 @@ import bluecard from "../assets/bluecard.png"
 
 function QuoteSection() {
   return (
-    <section className="flex justify-center mt-6">
+    <section className="flex justify-center my-6">
 
       <div className="w-full lg:w-[77vw] lg:h-[420px] rounded-md relative overflow-hidden">
 

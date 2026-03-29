@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from "../components/Navigation"
 import Newsletter from "../components/Newsletter";
 import Hero from "../components/Hero"
 import Footer from '../components/Footer';
@@ -19,21 +18,15 @@ import appliance from "../assets/appliance.png";
 import coffee from "../assets/coffee.png";
 import cotegory2 from "../assets/cotegory2.png"
 import QuoteSection from '../components/QuoteSection';
+import { Link } from "react-router-dom";
 
-import tshirt from "../assets/tshirt.png";
-import jacket from "../assets/jacket.png";
-import coat from "../assets/coat.png";
-import wallet from "../assets/wallet.png";
-import bag from "../assets/bag.png";
-import jeans from "../assets/jeans.png";
-import newheadphone from "../assets/newheadphone.png";
-import jug from "../assets/jug.png";
 
 import service1 from "../assets/service1.png";
 import service2 from "../assets/service2.png";
 import service3 from "../assets/service3.png";
 import service4 from "../assets/service4.png";
 
+import { recommendedProducts } from "../data/products";
 
 
 const Home = () => {
@@ -59,58 +52,7 @@ const Home = () => {
     { title: "Coffee maker", price: 10, image: coffee }
   ];
 
-  const recommendedProducts = [
-    {
-      title: "T-shirts with multiple colors, for men",
-      price: 10.3,
-      image: tshirt
-    },
-    {
-      title: "Jeans shorts for men blue color",
-      price: 10.3,
-      image: jacket
-    },
-    {
-      title: "Brown winter coat medium size",
-      price: 12.5,
-      image: coat
-    },
-    {
-      title: "Jeans bag for travel for men",
-      price: 34,
-      image: wallet
-    },
-    {
-      title: "Leather wallet",
-      price: 99,
-      image: bag
-    },
-    {
-      title: "Canon camera black, 100x zoom",
-      price: 9.99,
-      image: jeans
-    },
-    {
-      title: "Headset for gaming with mic",
-      price: 8.99,
-      image: newheadphone
-    },
-    {
-      title: "Smartwatch silver color modern",
-      price: 10.3,
-      image: jug
-    },
-    {
-      title: "Blue wallet for men leather material",
-      price: 10.3,
-      image: blender
-    },
-    {
-      title: "Electric kettle for travel",
-      price: 80.95,
-      image: jacket
-    }
-  ];
+ 
   const services = [
     {
       title: "Source from Industry Hubs",
@@ -188,7 +130,7 @@ const Home = () => {
   return (
     <div>
 
-      <Navigation />
+
       {/* Gray section for rest of page */}
       <section className="bg-gray-100 pt-5">
         <Hero />
@@ -472,9 +414,10 @@ const Home = () => {
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
 
               {recommendedProducts.map((item, index) => (
-                <div
+                <Link
+                  to={`/product/${item.id}`}
                   key={index}
-                  className="bg-white p-3 lg:p-4 rounded-md border border-gray-300 hover:shadow-md transition"
+                  className="bg-white p-3 lg:p-4 rounded-md border border-gray-300 hover:shadow-md transition block"
                 >
 
                   {/* Image */}
@@ -496,7 +439,7 @@ const Home = () => {
                     {item.title}
                   </p>
 
-                </div>
+                </Link>
               ))}
 
             </div>
@@ -507,100 +450,100 @@ const Home = () => {
 
         {/* our extra sevices */}
 
-<section className="flex justify-center mt-9">
+        <section className="flex justify-center mt-9">
 
-  <div className="w-full lg:w-[77vw] px-4 lg:px-0">
+          <div className="w-full lg:w-[77vw] px-4 lg:px-0">
 
-    <h2 className="text-lg lg:text-2xl font-medium mb-4 lg:mb-6">
-      Our extra services
-    </h2>
+            <h2 className="text-lg lg:text-2xl font-medium mb-4 lg:mb-6">
+              Our extra services
+            </h2>
 
-    {/* cards here */}
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+            {/* cards here */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
 
-      {services.map((item, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-md overflow-hidden border border-gray-300 hover:shadow-md transition"
-        >
+              {services.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-md overflow-hidden border border-gray-300 hover:shadow-md transition"
+                >
 
-          {/* Image Section */}
-          <div className="relative h-[100px] lg:h-[120px]">
+                  {/* Image Section */}
+                  <div className="relative h-[100px] lg:h-[120px]">
 
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
 
-            {/* Icon */}
-            <div className="absolute bottom-[-18px] right-3 lg:right-4 w-8 h-8 lg:w-10 lg:h-10 bg-blue-100 flex items-center justify-center rounded-full shadow">
-              <span className="text-sm lg:text-lg">
-                {item.icon}
-              </span>
+                    {/* Icon */}
+                    <div className="absolute bottom-[-18px] right-3 lg:right-4 w-8 h-8 lg:w-10 lg:h-10 bg-blue-100 flex items-center justify-center rounded-full shadow">
+                      <span className="text-sm lg:text-lg">
+                        {item.icon}
+                      </span>
+                    </div>
+
+                  </div>
+
+                  {/* Text */}
+                  <div className="p-3 pt-5 lg:p-4 lg:pt-6">
+                    <p className="text-sm lg:text-md font-medium">
+                      {item.title}
+                    </p>
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* suppliers by region */}
+        <section className="flex justify-center mt-9 bg-gray-100 py-6">
+
+          <div className="w-full lg:w-[77vw] px-4 lg:px-0">
+
+            <h2 className="text-lg lg:text-2xl font-semibold mb-4 lg:mb-6">
+              Suppliers by region
+            </h2>
+
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-4 gap-x-3">
+
+              {suppliers.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 lg:gap-3 hover:shadow-sm p-1 rounded"
+                >
+
+                  {/* Flag */}
+                  <img
+                    src={item.flag}
+                    alt={item.name}
+                    className="w-5 h-3 lg:w-6 lg:h-4 object-cover"
+                  />
+
+                  {/* Text */}
+                  <div>
+                    <p className="text-xs lg:text-sm font-medium">
+                      {item.name}
+                    </p>
+                    <p className="text-[10px] lg:text-xs text-gray-500">
+                      {item.domain}
+                    </p>
+                  </div>
+
+                </div>
+              ))}
+
             </div>
 
           </div>
 
-          {/* Text */}
-          <div className="p-3 pt-5 lg:p-4 lg:pt-6">
-            <p className="text-sm lg:text-md font-medium">
-              {item.title}
-            </p>
-          </div>
-
-        </div>
-      ))}
-
-    </div>
-
-  </div>
-</section>
-
-    {/* suppliers by region */}
-<section className="flex justify-center mt-9 bg-gray-100 py-6">
-
-  <div className="w-full lg:w-[77vw] px-4 lg:px-0">
-
-    <h2 className="text-lg lg:text-2xl font-semibold mb-4 lg:mb-6">
-      Suppliers by region
-    </h2>
-
-    <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-4 gap-x-3">
-
-      {suppliers.map((item, index) => (
-        <div
-          key={index}
-          className="flex items-center gap-2 lg:gap-3 hover:shadow-sm p-1 rounded"
-        >
-
-          {/* Flag */}
-          <img
-            src={item.flag}
-            alt={item.name}
-            className="w-5 h-3 lg:w-6 lg:h-4 object-cover"
-          />
-
-          {/* Text */}
-          <div>
-            <p className="text-xs lg:text-sm font-medium">
-              {item.name}
-            </p>
-            <p className="text-[10px] lg:text-xs text-gray-500">
-              {item.domain}
-            </p>
-          </div>
-
-        </div>
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
+        </section>
         <Newsletter />
-        <Footer />
+        
 
 
       </section>

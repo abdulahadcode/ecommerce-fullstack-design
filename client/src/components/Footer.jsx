@@ -19,13 +19,13 @@ function Footer() {
     <footer className="bg-white pt-8 lg:pt-10">
 
       {/* Main Footer */}
-      <div className="w-full lg:w-[77vw] mx-auto px-4 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div className="w-full lg:w-[77vw] mx-auto px-4 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
 
         {/* Brand */}
         <div className="col-span-2 lg:col-span-2">
           <img src={logo} alt="Company Logo" className="mb-2" />
 
-          <p className="text-sm text-gray-500 mb-4 max-w-xs">
+          <p className="text-lg text-gray-500 mb-4 max-w-xs">
             Best information about the companies here but now lorem ipsum is
           </p>
 
@@ -40,8 +40,8 @@ function Footer() {
 
         {/* About */}
         <div>
-          <h3 className="font-semibold mb-2">About</h3>
-          <ul className="text-sm text-gray-500 space-y-1">
+          <h3 className="font-semibold mb-2 text-lg lg:text-2xl">About</h3>
+          <ul className="lg:text-lg text-sm text-gray-500 space-y-2">
             <li>About Us</li>
             <li>Find store</li>
             <li>Categories</li>
@@ -51,8 +51,8 @@ function Footer() {
 
         {/* Partnership */}
         <div>
-          <h3 className="font-semibold mb-2">Partnership</h3>
-          <ul className="text-sm text-gray-500 space-y-1">
+          <h3 className="font-semibold text-lg lg:text-2xl mb-2">Partnership</h3>
+          <ul className="lg:text-lg text-sm text-gray-500 space-y-2">
             <li>About Us</li>
             <li>Find store</li>
             <li>Categories</li>
@@ -62,8 +62,8 @@ function Footer() {
 
         {/* Information */}
         <div>
-          <h3 className="font-semibold mb-2">Information</h3>
-          <ul className="text-sm text-gray-500 space-y-1">
+          <h3 className="font-semibold text-lg lg:text-2xl mb-2">Information</h3>
+          <ul className="lg:text-lg text-sm text-gray-500 space-y-2">
             <li>Help Center</li>
             <li>Money Refund</li>
             <li>Shipping</li>
@@ -73,8 +73,8 @@ function Footer() {
 
         {/* For users */}
         <div>
-          <h3 className="font-semibold mb-2">For users</h3>
-          <ul className="text-sm text-gray-500 space-y-1">
+          <h3 className="font-semibold text-lg lg:text-2xl mb-2">For users</h3>
+          <ul className="lg:text-lg text-sm text-gray-500 space-y-2">
             <li>Login</li>
             <li>Register</li>
             <li>Settings</li>
